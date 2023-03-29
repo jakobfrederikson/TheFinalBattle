@@ -53,5 +53,5 @@
 
     public Party GetPartyFor (Character c) => _heroes.Characters.Contains(c) ? _heroes : _monsters;
     public Party GetEnemyPartyFor (Character c) => _heroes.Characters.Contains(c) ? _monsters : _heroes;
-    public Party GetWinningParty() => _heroes.PartyIsDead ? _monsters : _heroes; // Only use when isOver == true
+    private Party GetWinningParty() => _heroes.PartyIsDead ? _monsters : _heroes; // Only use when isOver == true
 }
