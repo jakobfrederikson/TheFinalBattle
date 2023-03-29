@@ -1,0 +1,12 @@
+﻿Core Game: Done
+
+Expansions:
+- The Game's Status
+- Items
+- Gear
+- Stolen Inventory
+- Vin Fletcher
+- Attack Modifiers
+- Damage Types
+- Making it Yours
+- Restoring Balance
