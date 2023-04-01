@@ -14,8 +14,14 @@ public class AttackAction : IAction
     {
         Character enemy = game.GetEnemyPartyFor(character).Characters[0];
         character.StandardAttack.Attack(enemy);
-        Console.WriteLine($"{character.Name} used {character.StandardAttack.Name} on {enemy.Name}");
-        Console.WriteLine($"{character.StandardAttack.Name} dealt {character.StandardAttack.Damage} to {enemy.Name}");
+
+        Console.Write($"{character.Name} used ");
+        ColouredConsole.Write($"{character.StandardAttack.Name} ", ConsoleColor.Yellow);
+        Console.WriteLine($"on {enemy.Name}");
+
+        Console.Write($"{character.StandardAttack.Name} dealt ");
+        ColouredConsole.Write($"{character.StandardAttack.Damage} ", ConsoleColor.Yellow);
+        Console.WriteLine($"to {enemy.Name}");
 
         int health = enemy.IsDead ? 0 : enemy.CurrentHP;
         Console.WriteLine($"{enemy.Name} is now at {health}/{enemy.MaxHP}.");

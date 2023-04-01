@@ -15,9 +15,15 @@ Party monsterParty1 = new Party(players[1]);
 Party monsterParty2 = new Party(players[1]);
 Party monsterParty3 = new Party(players[1]);
 
-Console.Write("What is your name? ");
-string name = Console.ReadLine();
-heroes.Characters.Add(new TrueProgrammer(name.ToUpper()));
+if (input != 3)
+{
+    Console.Write("What is your name? ");
+    string name = Console.ReadLine();
+    heroes.Characters.Add(new TrueProgrammer(name.ToUpper()));
+}
+else
+    heroes.Characters.Add(new TrueProgrammer("TrueProgrammer"));
+
 
 monsterParty1.Characters.Add(new Skeleton());
 monsterParty2.Characters.Add(new Skeleton());

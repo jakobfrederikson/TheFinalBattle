@@ -59,27 +59,27 @@
 
     private void DisplayStatus(Character playingCharacter)
     {
-        Console.WriteLine($"==== BATTLE ====");
+        ColouredConsole.WriteLine($"==== BATTLE ====", ConsoleColor.Gray);
         // Heroes
         foreach (var c in _heroes.Characters)
         {
             if (c == playingCharacter)
-                ColouredConsole.WriteLine($"{c.Name} {c.CurrentHP}/{c.MaxHP}", ConsoleColor.Cyan);
+                ColouredConsole.WriteLine($"{c.Name} {c.CurrentHP, 15}/{c.MaxHP}", ConsoleColor.Cyan);
             else
-                Console.WriteLine($"{c.Name} {c.CurrentHP}/{c.MaxHP}");
+                Console.WriteLine($"{c.Name} {c.CurrentHP, 15}/{c.MaxHP}");
         }
         // Brake
-        Console.WriteLine("----------------");
+        ColouredConsole.WriteLine("----------------", ConsoleColor.DarkGray);
 
         // Monsters
         foreach (var c in _monsters.Characters)
         {
             if (c == playingCharacter)
-                ColouredConsole.WriteLine($"{c.Name} {c.CurrentHP}/{c.MaxHP}", ConsoleColor.Cyan);
+                ColouredConsole.WriteLine($"{c.Name, 15} {c.CurrentHP}/{c.MaxHP}", ConsoleColor.Cyan);
             else
-                Console.WriteLine($"{c.Name} {c.CurrentHP}/{c.MaxHP}");
+                Console.WriteLine($"{c.Name, 30} {c.CurrentHP}/{c.MaxHP}");
         }
 
-        Console.WriteLine("================");
+        ColouredConsole.WriteLine("================", ConsoleColor.Gray);
     }
 }
