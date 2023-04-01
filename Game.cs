@@ -20,8 +20,10 @@
             {
                 foreach (var character in party.Characters)
                 {
-                    // Display who's turn it is.
                     Console.WriteLine();
+                    DisplayStatus(character); // Display current status of party/characters.
+
+                    // Display who's turn it is.
                     Console.WriteLine($"It is {character.Name}'s turn.");
 
                     // Decide characters action for the round.
@@ -54,4 +56,30 @@
     public Party GetPartyFor (Character c) => _heroes.Characters.Contains(c) ? _heroes : _monsters;
     public Party GetEnemyPartyFor (Character c) => _heroes.Characters.Contains(c) ? _monsters : _heroes;
     private Party GetWinningParty() => _heroes.PartyIsDead ? _monsters : _heroes; // Only use when isOver == true
+
+    private void DisplayStatus(Character playingCharacter)
+    {
+        Console.WriteLine($"==== BATTLE ====");
+        // Heroes
+        foreach (var c in _heroes.Characters)
+        {
+            if (c == playingCharacter)
+                ColouredConsole.WriteLine($"{c.Name} {c.CurrentHP}/{c.MaxHP}", ConsoleColor.Cyan);
+            else
+                Console.WriteLine($"{c.Name} {c.CurrentHP}/{c.MaxHP}");
+        }
+        // Brake
+        Console.WriteLine("----------------");
+
+        // Monsters
+        foreach (var c in _monsters.Characters)
+        {
+            if (c == playingCharacter)
+                ColouredConsole.WriteLine($"{c.Name} {c.CurrentHP}/{c.MaxHP}", ConsoleColor.Cyan);
+            else
+                Console.WriteLine($"{c.Name} {c.CurrentHP}/{c.MaxHP}");
+        }
+
+        Console.WriteLine("================");
+    }
 }

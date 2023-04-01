@@ -1,6 +1,6 @@
 ﻿public class MonsterPartyManager
 {
-    public List<Party> MonsterList = new List<Party>();
+    public List<Party> MonsterList { get; set; } = new List<Party>();
 
     // If a party is still alive, return false. Else, return true.
     public bool AllPartiesDead()
