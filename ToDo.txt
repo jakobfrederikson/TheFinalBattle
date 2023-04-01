@@ -1,7 +1,16 @@
-﻿Core Game: Done
+﻿Core Game: Finished
+- Building Character -- Complete
+- The True Programmer -- Complete
+- Characters, Actions, and Players -- Complete
+- Attacks -- Complete
+- Damage and HP -- Complete
+- Death -- Complete
+- Battle Series -- Complete
+- The Uncoded One -- Complete
+- The Player Decides -- Complete
 
-Expansions:
-- The Game's Status
+Expansions: In Progress
+- The Game's Status -- Complete
 - Items
 - Gear
 - Stolen Inventory
