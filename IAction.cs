@@ -29,7 +29,7 @@ public class AttackAction : IAction
         // Check if enemy health == 0. If so, remove from party.
         if (enemy.IsDead)
         {
-            Console.WriteLine($"{enemy.Name} has been slain!");
+            ColouredConsole.WriteLine($"{enemy.Name} has been slain!", ConsoleColor.DarkRed);
             game.GetEnemyPartyFor(character).Characters.Remove(enemy);
         }            
     }
