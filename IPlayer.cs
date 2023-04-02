@@ -7,6 +7,24 @@ public class ComputerPlayer : IPlayer
 {
     public IAction ChooseAction(Game game, Character character)
     {
+        // Use health potion 25% of time if character HP less than half.
+        if (character.CurrentHP < character.MaxHP / 2)
+        {
+            var inventory = game.GetPartyFor(character).Items;
+            
+            if (inventory.Count > 0)
+            {
+                // Check if the inventory contains a health potion
+                if (inventory.OfType<HealthPotion>().Any())
+                {
+                    Random random = new Random();
+                    if (random.Next(4) == 0) return new HealthPotionAction();
+                }
+                
+            }
+        }
+        
+        // Default to attack
         return new AttackAction();
     }
 }
