@@ -34,3 +34,11 @@ public class AttackAction : IAction
         }            
     }
 }
+
+public class ItemAction : IAction
+{
+    public void PerformAction( Game game, Character character)
+    {
+
+    }
+}

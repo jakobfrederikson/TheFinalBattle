@@ -15,6 +15,15 @@ Party monsterParty1 = new Party(players[1]);
 Party monsterParty2 = new Party(players[1]);
 Party monsterParty3 = new Party(players[1]);
 
+// Add Items to parties
+heroes.Items.Add(new HealthPotion());
+heroes.Items.Add(new HealthPotion());
+heroes.Items.Add(new HealthPotion());
+monsterParty1.Items.Add(new HealthPotion());
+monsterParty2.Items.Add(new HealthPotion());
+monsterParty3.Items.Add(new HealthPotion());
+
+// Add characters to parties
 if (input != 3)
 {
     Console.Write("What is your name? ");
@@ -23,7 +32,6 @@ if (input != 3)
 }
 else
     heroes.Characters.Add(new TrueProgrammer("TrueProgrammer"));
-
 
 monsterParty1.Characters.Add(new Skeleton());
 monsterParty2.Characters.Add(new Skeleton());
