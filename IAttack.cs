@@ -9,7 +9,7 @@
 public class Punch : IAttack
 {
     public string Name { get; } = "PUNCH";
-    public int Damage { get; set; } = 6;
+    public int Damage { get; set; } = 1;
     public void Attack(Character c) => c.CurrentHP -= Damage;
 }
 
