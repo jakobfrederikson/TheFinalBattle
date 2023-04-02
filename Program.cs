@@ -28,7 +28,7 @@ if (input != 3)
 {
     Console.Write("What is your name? ");
     string name = Console.ReadLine();
-    heroes.Characters.Add(new TrueProgrammer(name.ToUpper()));
+    heroes.Characters.Add(new TrueProgrammer(name));
 }
 else
     heroes.Characters.Add(new TrueProgrammer("TrueProgrammer"));

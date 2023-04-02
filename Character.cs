@@ -22,7 +22,7 @@ public class TrueProgrammer : Character
     public override int MaxHP { get; } = 25;
     public override int CurrentHP { get; set; } = 25;
 
-    public TrueProgrammer(string name) => Name = name;
+    public TrueProgrammer(string name) => Name = name.ToUpper();
 }
 
 public class TheUncodedOne : Character
