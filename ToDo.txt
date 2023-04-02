@@ -11,7 +11,7 @@
 
 Expansions: In Progress
 - The Game's Status -- Complete
-- Items
+- Items -- Complete [Add a menu for party inventory]
 - Gear
 - Stolen Inventory
 - Vin Fletcher
