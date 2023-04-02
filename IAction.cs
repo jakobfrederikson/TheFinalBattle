@@ -35,10 +35,22 @@ public class AttackAction : IAction
     }
 }
 
-public class ItemAction : IAction
+public class HealthPotionAction : IAction
 {
-    public void PerformAction( Game game, Character character)
+    public void PerformAction(Game game, Character character)
     {
+        List<IItem> inventory = game.GetPartyFor(character).Items;
+        HealthPotion hp = inventory.OfType<HealthPotion>().First();
+        hp.UseItem(game, character);
 
+        Console.Write($"{character.Name} used ");
+        ColouredConsole.Write($"{hp.Name} ", ConsoleColor.Magenta);
+        Console.WriteLine("to restore 10 HP!");
+
+        // Remove the item from the party inventory
+        if (inventory.Remove(hp))
+            ColouredConsole.WriteLine($"Sucessfully removed {hp}", ConsoleColor.Blue);
+        else
+            ColouredConsole.WriteLine($"Was not able to remove {hp}!", ConsoleColor.Blue);
     }
 }

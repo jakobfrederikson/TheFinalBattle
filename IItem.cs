@@ -10,6 +10,7 @@ public class HealthPotion : IItem
 
     public void UseItem(Game game, Character character)
     {
-
+        character.CurrentHP += 10;
+        if (character.CurrentHP > character.MaxHP) character.CurrentHP = character.MaxHP;
     }
 }

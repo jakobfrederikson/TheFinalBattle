@@ -20,11 +20,13 @@ public class HumanPlayer : IPlayer
         Console.WriteLine("3 - Do Nothing");
         
         Console.Write("Choose an action: ");
+        // Take [ Use Item] into a seperate menu, and number 2 on the switch statement can return whatever item was chosen.
+        // For now, we assume every itme is a health potion.
 
         return int.Parse(Console.ReadLine()) switch
         {
             1 => new AttackAction(),
-            2 => new ItemAction(),
+            2 => new HealthPotionAction(),
             3 => new DoNothingAction(),
             _ => new DoNothingAction()
         };
